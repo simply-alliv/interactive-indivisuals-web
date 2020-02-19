@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "interactive-indivisuals-web": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "interactive-indivisuals-web"
+    }
+  },
+  "defaultProject": "interactive-indivisuals-web",
+  "cli": {
+    "analytics": "1cfb14cf-0df2-4abb-9b81-36d76481ef2d"
+  }
 }
