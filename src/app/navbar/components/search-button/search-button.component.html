@@ -1,3 +1,10 @@
-<button class="search">
-    <mat-icon aria-hidden="false" aria-label="Search icon" [color]="searchIconColour">{{ iconName }}</mat-icon>
+<button class="search" (click)="onSearchClick()">
+    <div class="search__icon-container" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+        <mat-icon aria-hidden="false" aria-label="Search icon" [color]="iconColour" *ngIf="!activeSearch">
+            search
+        </mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Close icon" [color]="iconColour" *ngIf="activeSearch">
+            close
+        </mat-icon>
+    </div>
 </button>

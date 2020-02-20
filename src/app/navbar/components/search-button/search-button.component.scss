@@ -1,9 +1,13 @@
 .search {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search__icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 64px;
-    background-color: transparent;
-    border: none;
 }

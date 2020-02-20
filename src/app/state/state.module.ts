@@ -6,11 +6,18 @@ import { StandaloneServicesStateModule } from './standalone-services/standalone-
 
 import { entityConfig } from './configs/entity-metadata.config';
 
+import { BundledServicesFacade } from './bundled-services/bundled-services-facade.service';
+import { StandaloneServicesFacade } from './standalone-services/standalone-services-facade.service';
+
 @NgModule({
     imports: [
         EntityDataModule.forRoot(entityConfig),
         BundledServicesStateModule,
         StandaloneServicesStateModule
+    ],
+    providers: [
+        BundledServicesFacade,
+        StandaloneServicesFacade
     ]
 })
 export class StateModule {}

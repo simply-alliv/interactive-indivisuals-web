@@ -1,5 +1,12 @@
 <div class="navbar container">
     <app-logo [routerLink]="'/'"></app-logo>
-    <app-navbar-items [navbarItems]="navbarItems"></app-navbar-items>
-    <app-search-button></app-search-button>
+    <div id="navbarContainer" #navbarContainer></div>
+    <app-search-button [activeSearch]="activeSearch" (onClick)="onSearchClick()"></app-search-button>
 </div>
+
+<app-navbar-container *ngIf="!activeSearch">
+    <app-navbar-items></app-navbar-items>
+</app-navbar-container>
+<app-navbar-container *ngIf="activeSearch">
+    <app-searchbar [width]="width"></app-searchbar>
+</app-navbar-container>

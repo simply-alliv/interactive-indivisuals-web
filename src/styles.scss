@@ -52,3 +52,9 @@ $interactive-indivisuals-web-theme: mat-light-theme($interactive-indivisuals-web
 
 html, body { height: 100%; box-sizing: border-box; }
 body { margin: 0; }
+
+// Hiding the outline, or focus ring, in an accessible way
+.no-focus-outline a:focus,
+.no-focus-outline button:focus {
+  outline: none;
+}

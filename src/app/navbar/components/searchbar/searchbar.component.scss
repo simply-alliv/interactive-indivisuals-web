@@ -1,0 +1,25 @@
+.searchbar {
+    display: flex;
+    align-items: center;
+    background-color: var(--grey-colour);
+}
+
+.searchbar__input {
+    height: 64px;
+    width: 100%;
+    padding: 0 16px;
+    border: none;
+    background-color: transparent;
+    font: 600 15px Nunito;
+}
+
+.searchbar__link {
+    display: flex;
+    height: 64px;
+    width: 56px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-primary-colour);
+}

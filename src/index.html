@@ -10,5 +10,13 @@
 </head>
 <body class="mat-typography">
   <app-root></app-root>
+  <script type="text/javascript">
+    // Listen to tab events to enable outlines (accessibility improvement)
+    document.body.addEventListener('keyup', function(e) {
+      if (e.code === 'Tab') /* tab */ {
+        document.documentElement.classList.remove('no-focus-outline');
+      }
+    });
+  </script>
 </body>
 </html>

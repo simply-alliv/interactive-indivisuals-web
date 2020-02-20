@@ -1,1 +1,6 @@
-<p>searchbar works!</p>
+<div class="searchbar" [style.width]="width + 'px'">
+    <input class="searchbar__input" type="text" placeholder="Search">
+    <a class="searchbar__link" routerLink="/">
+        <mat-icon aria-hidden="false" aria-label="Search icon">search</mat-icon>
+    </a>
+</div>

@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search-button',
@@ -6,21 +6,32 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./search-button.component.scss']
 })
 export class SearchButtonComponent {
-  searchIconColour: string = '';
+  @Input() activeSearch: boolean;
+  @Output() onClick = new EventEmitter();
+
+  iconColour: string = '';
   iconName: string = 'search';
 
   constructor() { }
 
-  @HostListener('click', ['$event.target'])
-  onClick() {}
-
-  @HostListener('mouseover')
-  onMouseOver() {
-    this.searchIconColour = 'accent';
+  onSearchClick() {
+    this.onClick.emit();
+    this.updateUI();
   }
 
-  @HostListener('mouseout')
+  onMouseOver() {
+    if (!this.activeSearch) {
+      this.iconColour = 'accent';
+    }
+  }
+
   onMouseOut() {
-    this.searchIconColour = '';
+    if (!this.activeSearch) {
+      this.iconColour = '';
+    }
+  }
+
+  updateUI() {
+    this.iconColour = !this.activeSearch ? 'accent' : '';
   }
 }
