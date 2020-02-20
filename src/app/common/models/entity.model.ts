@@ -1,3 +1,3 @@
-export interface Entity {
+export class Entity {
     readonly id: string;
 }

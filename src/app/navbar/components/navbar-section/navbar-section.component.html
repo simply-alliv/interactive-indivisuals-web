@@ -1,0 +1,17 @@
+<ng-container *ngFor="let sectionItem of section.items">
+    <div [ngSwitch]="sectionItem.type">
+        <h4 *ngSwitchCase="headerSectionItemType" class="text-secondary item">{{ sectionItem.header }}</h4>
+        <h3 *ngSwitchCase="heroSectionItemType" class="text-primary item">{{ sectionItem.heroText }}</h3>
+        <div *ngSwitchCase="primaryLinkSectionItemType" class="item">
+            <a class="link item mat-raised-button" [routerLink]="sectionItem.routerLink">
+                {{ sectionItem.label }}
+            </a>
+        </div>
+        <div *ngSwitchCase="secondaryLinkSectionItemType" class="secondary-link__container item">
+            <a class="link" [routerLink]="sectionItem.routerLink">
+                <h3 class="link__label">{{ sectionItem.label }}</h3>
+                <p>{{ sectionItem.description }}</p>
+            </a>
+        </div>
+    </div>
+</ng-container>

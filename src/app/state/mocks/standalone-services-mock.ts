@@ -46,8 +46,8 @@ export const standaloneServicesMockData: StandaloneService[] = [
       {
         id: ServiceID.webDevelopment,
         name: 'Web Development',
-        description: 'Implement the right content and ensure that it effectively speaks and connects ' +
-          'with your target audience.',
+        description: "Implement web technologies amd ensure that you are visible wherever you're " +
+          'searched for by your target audience',
         bundleId: 'digital-presence'
       },
       {

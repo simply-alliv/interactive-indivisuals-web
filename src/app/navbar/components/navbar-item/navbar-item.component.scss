@@ -1,0 +1,32 @@
+.item {
+    position: relative;
+    height: 64px;
+    background-color: transparent;
+    border: none;
+}
+
+.item:hover {
+    background-color: var(--hover-light-colour);
+    & .item__icon {
+        color: var(--text-secondary-colour);
+    }
+}
+
+.item__sections {
+    display: flex;
+}
+
+.item__text {
+    position: relative;
+    padding: 0 16px;
+    margin: auto 0;
+}
+
+.item__icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 18px;
+    color: transparent;
+}

@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo__text {
+    margin: 0;
+    margin-inline-start: 0.5rem;
+    color: var(--text-primary-colour);
+}

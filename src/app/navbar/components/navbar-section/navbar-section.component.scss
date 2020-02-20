@@ -1,0 +1,32 @@
+:host {
+    flex-basis: 50%;
+}
+
+:host:only-child {
+    flex-basis: 100%;
+}
+
+.item {
+    padding: 8px 16px;
+}
+
+.primary-link__container:hover {
+    background-color: var(--grey-colour);
+}
+
+.primary-link__container {
+    background-color: transparent;
+}
+
+.secondary-link__container:hover {
+    background-color: var(--grey-colour);
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link__label {
+    margin: 0;
+}
