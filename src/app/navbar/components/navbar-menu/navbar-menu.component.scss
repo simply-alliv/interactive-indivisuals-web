@@ -22,12 +22,12 @@ div.mat-menu-item {
     box-shadow: none;
 }
 
-.navbar-menu__expansion-panel:first-child {
-    border-top: 1px solid var(--grey-colour);
-}
-
 .secondary-link__container:hover {
     background-color: var(--grey-colour);
+}
+
+.secondary-link__container {
+    border-bottom: 1px solid var(--grey-colour);
 }
 
 .link {
