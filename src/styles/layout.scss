@@ -8,4 +8,21 @@
     }
 }
 
-.mat-menu-panel.panel-class { max-width: 512px; }
+.mat-menu-panel.navbar-item-panel { 
+    max-width: 512px;
+    & > div[class~="mat-menu-content"] {
+        display: flex;
+    }
+    & div[class~="mat-menu-item"] {
+        height: inherit;
+        line-height: inherit;
+        white-space: normal;
+    }
+    & a[class~="mat-menu-item"] {
+        display: inline;
+    }
+}
+
+.cdk-overlay-backdrop.navbar-item-overlay-backdrop {
+    top: 64px;
+}

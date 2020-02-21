@@ -5,15 +5,17 @@
     border: none;
 }
 
-.item:hover {
-    background-color: var(--hover-light-colour);
+.item--open-menu {
     & .item__icon {
         color: var(--text-secondary-colour);
     }
 }
 
-.item__sections {
-    display: flex;
+.item:hover {
+    background-color: var(--hover-light-colour);
+    & .item__icon {
+        color: var(--text-secondary-colour);
+    }
 }
 
 .item__text {

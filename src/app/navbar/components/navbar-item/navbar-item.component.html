@@ -1,12 +1,9 @@
-<mat-menu #appMenu="matMenu" class="panel-class">
-    <ng-template matMenuContent let-navbarItem="navbarItem">
-        <div class="item__sections">
-            <app-navbar-section *ngFor="let section of navbarItem.sections" [section]="section"></app-navbar-section>
-        </div>
-    </ng-template>
+<mat-menu #navbarItemMenu="matMenu" [class]="'navbar-item-panel'" [backdropClass]="'cdk-overlay-dark-backdrop'">
+    <app-navbar-section *ngFor="let section of navbarItem.sections" [section]="section"></app-navbar-section>
 </mat-menu>
 
-<button class="item" [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{ navbarItem: navbarItem }">
+<button [ngClass]="{ 'item': true, 'item--open-menu': menuOpen }" [matMenuTriggerFor]="navbarItemMenu"
+    (menuOpened)="onMenuOpened()" (menuClosed)="onMenuClosed()">
     <p class="item__text mat-body-2">{{ navbarItem.label }}</p>
     <div class="item__icon">
         <mat-icon inline="true" aria-hidden="false" aria-label="Navigation bar item dropdown icon">

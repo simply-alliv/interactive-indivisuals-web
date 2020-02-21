@@ -9,6 +9,13 @@ import { NavbarItem } from 'src/app/common/models';
 })
 export class NavbarItemComponent {
   @Input() navbarItem: NavbarItem
+  menuOpen: boolean = false;
 
-  constructor() { }
+  onMenuOpened() {
+    this.menuOpen = true;
+  }
+
+  onMenuClosed() {
+    this.menuOpen = false;
+  }
 }
