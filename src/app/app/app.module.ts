@@ -12,6 +12,7 @@ import { StateModule } from '../state/state.module';
 import { AppComponent } from './app.component';
 import { ROOT_REDUCERS_TOKEN, metaReducers } from '../store';
 import { CoreModule } from '../core/core.module';
+import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CoreModule } from '../core/core.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     NavbarModule,
+    FooterModule,
     CoreModule,
     EffectsModule.forRoot([]), 
     StateModule,

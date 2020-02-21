@@ -1,0 +1,13 @@
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 64px;
+}

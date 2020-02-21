@@ -1,0 +1,14 @@
+<mat-menu #navbarMobileMenu="matMenu" [class]="'navbar-mobile-menu-panel'" [backdropClass]="'navbar-mobile-menu-overlay-backdrop'">
+    <app-navbar-menu></app-navbar-menu>
+</mat-menu>
+
+<button class="menu" (click)="onMenuClick()" [matMenuTriggerFor]="navbarMobileMenu" (menuClosed)="onMenuClosed()">
+    <div class="menu__icon-container" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+        <mat-icon aria-hidden="false" aria-label="Menu icon" [color]="iconColour" *ngIf="!menuOpen">
+            menu
+        </mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Close icon" [color]="iconColour" *ngIf="menuOpen">
+            close
+        </mat-icon>
+    </div>
+</button>

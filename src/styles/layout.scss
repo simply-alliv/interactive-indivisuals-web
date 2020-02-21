@@ -23,6 +23,8 @@
     }
 }
 
-.cdk-overlay-backdrop.navbar-item-overlay-backdrop {
-    top: 64px;
+.mat-menu-panel.navbar-mobile-menu-panel { 
+    max-width: 100vw;
+    width: 100vw;
+    box-shadow: none;
 }

@@ -7,6 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class LogoComponent {
   @Input() routerLink: string;
-  
-  constructor() { }
+  @Input() withName: boolean = true;
 }
