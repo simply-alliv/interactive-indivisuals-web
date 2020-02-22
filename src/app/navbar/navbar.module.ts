@@ -9,8 +9,9 @@ import {PortalModule} from '@angular/cdk/portal';
 import {LayoutModule} from '@angular/cdk/layout';
 
 import { SharedModule } from '../shared/shared.module';
-import { NavbarComponent } from './containers/navbar/navbar.component';
+import { ButtonsModule, TypographyModule } from '../widgets';
 
+import { NavbarComponent } from './containers/navbar/navbar.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NavbarItemComponent } from './components/navbar-item/navbar-item.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
@@ -47,7 +48,9 @@ import { NavbarMenuComponent } from './components/navbar-menu/navbar-menu.compon
     MatExpansionModule,
     PortalModule,
     LayoutModule,
-    SharedModule
+    SharedModule,
+    ButtonsModule,
+    TypographyModule
   ],
   exports: [NavbarComponent]
 })

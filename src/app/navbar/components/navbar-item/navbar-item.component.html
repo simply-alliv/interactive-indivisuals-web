@@ -4,7 +4,7 @@
 
 <button [ngClass]="{ 'item': true, 'item--open-menu': menuOpen }" [matMenuTriggerFor]="navbarItemMenu"
     (menuOpened)="onMenuOpened()" (menuClosed)="onMenuClosed()">
-    <p class="item__text mat-body-2">{{ navbarItem.label }}</p>
+    <app-body [text]="navbarItem.label" [fontWeight]="buttonFontWeight"></app-body>
     <div class="item__icon">
         <mat-icon inline="true" aria-hidden="false" aria-label="Navigation bar item dropdown icon">
             arrow_drop_down

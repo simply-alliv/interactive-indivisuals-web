@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 
 import { NavbarSection } from 'src/app/common/models';
-import { NavbarSectionItemType } from 'src/app/common/enums';
+import { NavbarSectionItemType, FontWeight } from 'src/app/common/enums';
 
 @Component({
   selector: 'app-navbar-section',
@@ -10,6 +11,9 @@ import { NavbarSectionItemType } from 'src/app/common/enums';
 })
 export class NavbarSectionComponent {
   @Input() section: NavbarSection;
+
+  primaryButtonColour: ThemePalette = 'accent';
+  fontWeightBold = FontWeight.bold;
 
   headerSectionItemType: NavbarSectionItemType = NavbarSectionItemType.header;
   heroSectionItemType: NavbarSectionItemType = NavbarSectionItemType.hero;

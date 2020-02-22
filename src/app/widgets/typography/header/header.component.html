@@ -1,0 +1,9 @@
+<ng-container *ngIf="fontWeight === fontWeightNormal">
+    <h4 class="mat-body-1" *ngIf="!isMarginless">{{ text }}</h4>
+    <h4 class="mat-body-1" appMarginless *ngIf="isMarginless">{{ text }}</h4>
+</ng-container>
+
+<ng-container *ngIf="fontWeight === fontWeightBold">
+    <h3 class="mat-body-2" *ngIf="!isMarginless">{{ text }}</h3>
+    <h3 class="mat-body-2" appMarginless *ngIf="isMarginless">{{ text }}</h3>
+</ng-container>

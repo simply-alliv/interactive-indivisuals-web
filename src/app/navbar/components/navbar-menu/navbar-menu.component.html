@@ -1,15 +1,14 @@
 <mat-accordion [displayMode]="'flat'" class="navbar-menu__accordion">
     <mat-expansion-panel class="navbar-menu__expansion-panel container" *ngFor="let navbarItem of navbarItems">
         <mat-expansion-panel-header (click)="$event.stopPropagation()">
-            <h3 class="navbar-menu__label">{{ navbarItem.label }}</h3>
+            <app-header [text]="navbarItem.label" [fontWeight]="fontWeightBold" [isMarginless]="true">
+            </app-header>
         </mat-expansion-panel-header>
         <ng-template matExpansionPanelContent>
             <div class="navbar-menu__section" *ngFor="let section of navbarItem.sections">
                 <div class="navbar-menu__section-item" *ngFor="let sectionItem of section.items">
                     <div [ngSwitch]="sectionItem.type">
-                        <p *ngSwitchCase="heroSectionItemType" class="item mat-body-1">
-                            {{ sectionItem.heroText }}
-                        </p>
+                        <app-body *ngSwitchCase="heroSectionItemType" [text]="sectionItem.heroText"></app-body>
                         <div *ngSwitchCase="primaryLinkSectionItemType" class="item">
                             <a class="link mat-raised-button" [routerLink]="sectionItem.routerLink" mat-menu-item>
                                 {{ sectionItem.label }}
@@ -17,7 +16,8 @@
                         </div>
                         <div *ngSwitchCase="secondaryLinkSectionItemType" class="secondary-link__container item" mat-menu-item>
                             <a class="link" [routerLink]="sectionItem.routerLink">
-                                <p class="link__label mat-body-2">{{ sectionItem.label }}</p>
+                                <app-body [text]="sectionItem.label" [fontWeight]="fontWeightBold"
+                                    [isMarginless]="true"></app-body>
                             </a>
                         </div>
                     </div>

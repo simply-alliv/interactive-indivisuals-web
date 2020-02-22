@@ -1,16 +1,18 @@
 <ng-container *ngFor="let sectionItem of section.items">
-    <div [ngSwitch]="sectionItem.type">
-        <h4 *ngSwitchCase="headerSectionItemType" class="text-secondary item">{{ sectionItem.header }}</h4>
-        <h3 *ngSwitchCase="heroSectionItemType" class="text-primary item">{{ sectionItem.heroText }}</h3>
-        <div *ngSwitchCase="primaryLinkSectionItemType" class="item">
-            <a class="link item mat-raised-button" [routerLink]="sectionItem.routerLink" mat-menu-item>
-                {{ sectionItem.label }}
-            </a>
-        </div>
-        <div *ngSwitchCase="secondaryLinkSectionItemType" class="secondary-link__container item" mat-menu-item>
+    <div [ngSwitch]="sectionItem.type" 
+        [ngClass]="{ 'padded': sectionItem.type !== secondaryLinkSectionItemType }">
+        <app-header *ngSwitchCase="headerSectionItemType" [text]="sectionItem.header"></app-header>
+        <app-header *ngSwitchCase="heroSectionItemType" [text]="sectionItem.heroText"
+            [fontWeight]="fontWeightBold">
+        </app-header>
+        <app-contained-button *ngSwitchCase="primaryLinkSectionItemType" [label]="sectionItem.label"
+            [routerLink]="sectionItem.routerLink">
+        </app-contained-button>
+        <div *ngSwitchCase="secondaryLinkSectionItemType" class="secondary-link__container" mat-menu-item>
             <a class="link" [routerLink]="sectionItem.routerLink">
-                <h3 class="link__label">{{ sectionItem.label }}</h3>
-                <p>{{ sectionItem.description }}</p>
+                <app-header [text]="sectionItem.label" [fontWeight]="fontWeightBold" [isMarginless]="true">
+                </app-header>
+                <app-body [text]="sectionItem.description"></app-body>
             </a>
         </div>
     </div>

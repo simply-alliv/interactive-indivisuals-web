@@ -12,6 +12,7 @@
     max-width: 512px;
     & > div[class~="mat-menu-content"] {
         display: flex;
+        justify-content: space-between;
     }
     & div[class~="mat-menu-item"] {
         height: inherit;
@@ -20,6 +21,10 @@
     }
     & a[class~="mat-menu-item"] {
         display: inline;
+    }
+    & .mat-menu-content:not(:empty) {
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
 }
 

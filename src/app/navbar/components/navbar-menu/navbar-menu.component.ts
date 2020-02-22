@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavbarSectionItemType } from 'src/app/common/enums';
+import { NavbarSectionItemType, FontWeight } from 'src/app/common/enums';
 import { NavbarItem } from 'src/app/common/models';
 import { navbarItems } from 'src/app/state/mocks/navbar-items-mock';
 
@@ -11,6 +11,8 @@ import { navbarItems } from 'src/app/state/mocks/navbar-items-mock';
 })
 export class NavbarMenuComponent {
   navbarItems: NavbarItem[] = navbarItems;
+
+  fontWeightBold = FontWeight.bold;
 
   heroSectionItemType: NavbarSectionItemType = NavbarSectionItemType.hero;
   primaryLinkSectionItemType: NavbarSectionItemType = NavbarSectionItemType.primaryLink;

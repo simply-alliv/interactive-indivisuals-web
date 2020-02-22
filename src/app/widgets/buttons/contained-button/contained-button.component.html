@@ -1,0 +1,6 @@
+<button mat-raised-button [color]="color" [disabled]="disabled" *ngIf="!routerLink">
+    {{ label }}
+</button>
+<a mat-raised-button [color]="color" [disabled]="disabled" [routerLink]="routerLink" *ngIf="routerLink">
+    {{ label }}
+</a>

@@ -6,8 +6,8 @@
     flex-basis: 100%;
 }
 
-.item {
-    padding: 8px 16px;
+.secondary-link__container:not(:last-child) {
+    margin-top: 16px;
 }
 
 .secondary-link__container:hover {
@@ -19,6 +19,6 @@
     color: inherit;
 }
 
-.link__label {
-    margin: 0;
+.padded {
+    padding: 0 16px;
 }
