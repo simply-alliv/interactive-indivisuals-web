@@ -1,1 +1,2 @@
-<div class="footer container"></div>
+<app-footer-mobile *ngIf="footerMatched"></app-footer-mobile>
+<app-footer-desktop *ngIf="!footerMatched"></app-footer-desktop>

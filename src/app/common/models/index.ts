@@ -10,12 +10,18 @@ import {
     PrimaryLinkNavbarSectionItem,
     SecondaryLinkNavbarSectionItem
 } from './navbar-section';
+import {
+    FooterItem,
+    FooterSection
+} from './footer';
 import { StandaloneService } from './standalone-service.model';
 
 export {
     BundledService,
     BundleSquares,
     Entity,
+    FooterItem,
+    FooterSection,
     HeaderNavbarSectionItem,
     NavbarSection,
     HeroNavbarSectionItem,

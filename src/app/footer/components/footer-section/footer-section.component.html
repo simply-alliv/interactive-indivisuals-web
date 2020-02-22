@@ -1,0 +1,6 @@
+<h3 class="footer-section__header item">{{ section.header }}</h3>
+<div [class.grid]="isGrid">
+    <a class="link" *ngFor="let sectionItem of section.items" [routerLink]="sectionItem.routerLink">
+        <p class="link__label mat-body-1">{{ sectionItem.label }}</p>
+    </a>
+</div>

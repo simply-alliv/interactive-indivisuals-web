@@ -1,0 +1,53 @@
+<div class="footer-mobile container">
+    <mat-accordion [displayMode]="'flat'" class="footer__accordion">
+        <mat-expansion-panel class="footer-mobile__expansion-panel" *ngFor="let section of footerSections">
+            <mat-expansion-panel-header class="footer-mobile__header" (click)="$event.stopPropagation()">
+                <h3 class="footer-mobile__header-text">{{ section.header }}</h3>
+            </mat-expansion-panel-header>
+            <div class="link-container" *ngFor="let sectionItem of section.items">
+                <a class="link" [routerLink]="sectionItem.routerLink">
+                    <div class="link__label-container">
+                        <p class="link__label mat-body-1">{{ sectionItem.label }}</p>
+                    </div>
+                </a>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <div class="footer-mobile__legal">
+        <div class="footer-mobile__legal-top">
+            <a class="secondary-link" routerLink="/privacy">
+                <div class="link__label-container link__label-container--dense">
+                    <p class="link__label mat-body-1">Privacy</p>
+                </div>
+            </a>
+            <a class="secondary-link" routerLink="/terms-of-use">
+                <div class="link__label-container link__label-container--dense">
+                    <p class="link__label mat-body-1">Terms of Use</p>
+                </div>
+            </a>
+            <a class="secondary-link" routerLink="/cookies">
+                <div class="link__label-container link__label-container--dense">
+                    <p class="link__label mat-body-1">Cookies</p>
+                </div>
+            </a>
+        </div>
+        <div class="footer-mobile__legal-bottom">
+            <p class="copyright mat-body-1">Copyright &copy; 2020 Interactive IndiVisuals. All rights reserved.</p>
+        </div>
+    </div>
+    <!-- <div class="footer-desktop__sections">
+        <app-footer-section *ngFor="let section of footerSections" [section]="section"
+            [isGrid]="section.items.length > 4"></app-footer-section>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-desktop__legal">
+        <div class="footer-desktop__legal-left">
+            <a routerLink="/privacy" class="link">Privacy</a>
+            <a routerLink="/terms-of-use" class="link">Terms of Use</a>
+            <a routerLink="/cookies" class="link"><p class="mat-body-1">Cookies</p></a>
+        </div>
+        <div class="footer-desktop__legal-right">
+            <p class="copyright mat-body-1">Copyright &copy; 2020 Interactive IndiVisuals. All rights reserved.</p>
+        </div>
+    </div> -->
+</div>
