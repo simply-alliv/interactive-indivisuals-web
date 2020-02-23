@@ -1,8 +1,8 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { ComponentPortal } from '@angular/cdk/portal';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { NavbarItemsComponent } from '../../components/navbar-items/navbar-items.component';
-import { SearchbarComponent } from '../../components/searchbar/searchbar.component';
+import { BundlesService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-navbar-desktop',
@@ -12,20 +12,23 @@ import { SearchbarComponent } from '../../components/searchbar/searchbar.compone
 export class NavbarDesktopComponent {
   activeSearch: boolean = false;
   width: number = 0;
-
-  navbarPortal: ComponentPortal<any>;
-  navbarItemsPortal = new ComponentPortal(NavbarItemsComponent);
-  navbarSearchbarPortal = new ComponentPortal(SearchbarComponent);
+  
+  itemIds$: Observable<string[]>;
 
   @ViewChild('navbarContainer', { read: ViewContainerRef }) navbarContainer: ViewContainerRef;
 
-  constructor() { }
+  constructor(private bundlesService: BundlesService) {}
+
+  ngOnInit() {
+    this.itemIds$ = this.bundlesService.getAllBundlesIds().pipe(
+      map(ids => {
+        ids.push('support');
+        return ids;
+      })
+    );
+  }
 
   ngAfterViewInit() {
-    // Get the width of the navbar items component.
-    //
-    // It will be the navbar items component width because activeSearch is initially false
-    // and searchbar component is, therefore, not rendered.
     this.width = this.navbarContainer.element.nativeElement.offsetWidth;
   }
 

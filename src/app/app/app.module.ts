@@ -2,17 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarModule } from '../navbar/navbar.module';
-import { StateModule } from '../state/state.module';
-
-import { AppComponent } from './app.component';
-import { ROOT_REDUCERS_TOKEN, metaReducers } from '../store';
 import { CoreModule } from '../core/core.module';
 import { FooterModule } from '../footer/footer.module';
+
+import { AppComponent } from './app.component';
+
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,18 +24,12 @@ import { FooterModule } from '../footer/footer.module';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule,
     NavbarModule,
     FooterModule,
-    CoreModule,
-    EffectsModule.forRoot([]), 
-    StateModule,
-    StoreModule.forRoot(ROOT_REDUCERS_TOKEN, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    })
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,25 +1,27 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map, combineLatest } from 'rxjs/operators';
+import { map,combineLatest } from 'rxjs/operators';
 
-import { FontWeight } from 'src/app/common/enums';
 import { NavbarItem } from 'src/app/common/models';
-
+import { FontWeight, NavbarSectionItemType } from 'src/app/common/enums';
 import { BundlesService } from 'src/app/core/services';
 import { BundlesUtils } from '../../utils';
 
 @Component({
-  selector: 'app-navbar-item',
-  templateUrl: './navbar-item.component.html',
-  styleUrls: ['./navbar-item.component.scss']
+  selector: 'app-navbar-menu-item',
+  templateUrl: './navbar-menu-item.component.html',
+  styleUrls: ['./navbar-menu-item.component.scss']
 })
-export class NavbarItemComponent implements OnInit {
+export class NavbarMenuItemComponent implements OnInit {
   @Input() id: string
 
   item$: Observable<NavbarItem>;
   
-  menuOpen: boolean = false;
-  buttonFontWeight = FontWeight.bold;
+  fontWeightBold = FontWeight.bold;
+
+  heroSectionItemType: NavbarSectionItemType = NavbarSectionItemType.hero;
+  primaryLinkSectionItemType: NavbarSectionItemType = NavbarSectionItemType.primaryLink;
+  secondaryLinkSectionItemType: NavbarSectionItemType = NavbarSectionItemType.secondaryLink;
 
   constructor(private bundlesService: BundlesService) {}
 
@@ -32,13 +34,5 @@ export class NavbarItemComponent implements OnInit {
     } else {
       this.item$ = of(BundlesUtils.supportNavbarItem);
     }
-  }
-
-  onMenuOpened() {
-    this.menuOpen = true;
-  }
-
-  onMenuClosed() {
-    this.menuOpen = false;
   }
 }

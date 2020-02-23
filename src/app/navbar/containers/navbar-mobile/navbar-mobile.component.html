@@ -1,5 +1,5 @@
 <div class="navbar-mobile container">
-    <app-navbar-menu-button [menuOpen]="menuOpen" (onClick)="onMenuClick()" (menuClosed)="onMenuClosed()">
+    <app-navbar-menu-button [menuOpen]="menuOpen" [itemIds$]="itemIds$" (onClick)="onMenuClick()" (menuClosed)="onMenuClosed()">
     </app-navbar-menu-button>
     <app-logo [routerLink]="'/'" [withName]="true"></app-logo>
     <app-search-button [activeSearch]="activeSearch" (onClick)="onSearchClick()"></app-search-button>

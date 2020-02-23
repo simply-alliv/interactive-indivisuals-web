@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { BundlesService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-navbar-mobile',
@@ -9,9 +13,17 @@ export class NavbarMobileComponent implements OnInit {
   activeSearch: boolean = false;
   menuOpen: boolean = false;
 
-  constructor() { }
+  itemIds$: Observable<string[]>;
 
-  ngOnInit(): void {
+  constructor(private bundlesService: BundlesService) { }
+
+  ngOnInit() {
+    this.itemIds$ = this.bundlesService.getAllBundlesIds().pipe(
+      map(ids => {
+        ids.push('support');
+        return ids;
+      })
+    );
   }
 
   onMenuClick() {

@@ -15,8 +15,10 @@ import {
     FooterSection
 } from './footer';
 import { StandaloneService } from './standalone-service.model';
+import { Bundle, Service } from './data';
 
 export {
+    Bundle,
     BundledService,
     BundleSquares,
     Entity,
@@ -29,5 +31,6 @@ export {
     NavbarSectionItemBase,
     PrimaryLinkNavbarSectionItem,
     SecondaryLinkNavbarSectionItem,
+    Service,
     StandaloneService
 };

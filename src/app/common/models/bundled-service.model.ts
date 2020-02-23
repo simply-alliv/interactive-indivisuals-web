@@ -1,16 +1,16 @@
-import { BundleSquares } from './bundle-squares.model';
 import { Entity } from './entity.model';
+import { ServiceID } from '../enums';
 
 export class BundledService implements Entity {
     id: string;
     name: string;
     description: string;
-    bundleSquares: BundleSquares;
+    featuredServicesIds: ServiceID[];
 
-    constructor(id: string, name: string, description: string, bundledSquares: BundleSquares) {
+    constructor(id: string, name: string, description: string, featuredServicesIds: ServiceID[]) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.bundleSquares = bundledSquares;
+        this.featuredServicesIds = featuredServicesIds;
     }
 }

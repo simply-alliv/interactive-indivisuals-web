@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { navbarItems } from 'src/app/state/mocks/navbar-items-mock';
-import { NavbarItem } from 'src/app/common/models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar-menu-button',
@@ -8,8 +7,8 @@ import { NavbarItem } from 'src/app/common/models';
   styleUrls: ['./navbar-menu-button.component.scss']
 })
 export class NavbarMenuButtonComponent {
-  navbarItems: NavbarItem[] = navbarItems;
   @Input() menuOpen: boolean;
+  @Input() itemIds$: Observable<string[]>;
   @Output() onClick = new EventEmitter();
   @Output() menuClosed = new EventEmitter();
 

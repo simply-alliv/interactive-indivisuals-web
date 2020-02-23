@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { NavbarService } from './services/navbar/navbar.service';
+import { BundlesService, NavbarService } from './services';
 
 @NgModule({
   providers: [
+    BundlesService,
     NavbarService
   ]
 })
-export class CoreModule { }
+export class CoreModule {}

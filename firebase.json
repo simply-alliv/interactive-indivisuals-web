@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "interactive-indivisuals-web",
+      "public": "dist/interactive-indivisuals-web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

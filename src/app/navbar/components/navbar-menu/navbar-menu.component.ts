@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { map, combineLatest, mergeMap } from 'rxjs/operators';
 
 import { NavbarSectionItemType, FontWeight } from 'src/app/common/enums';
 import { NavbarItem } from 'src/app/common/models';
-import { navbarItems } from 'src/app/state/mocks/navbar-items-mock';
+import { BundlesService } from 'src/app/core/services';
+import { BundlesUtils } from '../../utils';
 
 @Component({
   selector: 'app-navbar-menu',
@@ -10,11 +13,5 @@ import { navbarItems } from 'src/app/state/mocks/navbar-items-mock';
   styleUrls: ['./navbar-menu.component.scss']
 })
 export class NavbarMenuComponent {
-  navbarItems: NavbarItem[] = navbarItems;
-
-  fontWeightBold = FontWeight.bold;
-
-  heroSectionItemType: NavbarSectionItemType = NavbarSectionItemType.hero;
-  primaryLinkSectionItemType: NavbarSectionItemType = NavbarSectionItemType.primaryLink;
-  secondaryLinkSectionItemType: NavbarSectionItemType = NavbarSectionItemType.secondaryLink;
+  @Input() itemIds$: Observable<string[]>;
 }

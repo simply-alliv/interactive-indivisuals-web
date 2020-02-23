@@ -1,5 +1,5 @@
 <mat-menu #navbarMobileMenu="matMenu" [class]="'navbar-mobile-menu-panel'" [backdropClass]="'navbar-mobile-menu-overlay-backdrop'">
-    <app-navbar-menu></app-navbar-menu>
+    <app-navbar-menu [itemIds$]="itemIds$"></app-navbar-menu>
 </mat-menu>
 
 <button class="menu" (click)="onMenuClick()" [matMenuTriggerFor]="navbarMobileMenu" (menuClosed)="onMenuClosed()">

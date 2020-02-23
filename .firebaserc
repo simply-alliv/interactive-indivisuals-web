@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "interactive-indivisuals": {
+      "hosting": {
+        "interactive-indivisuals-web": [
+          "interactive-indivisuals"
+        ]
+      }
+    }
+  }
+}

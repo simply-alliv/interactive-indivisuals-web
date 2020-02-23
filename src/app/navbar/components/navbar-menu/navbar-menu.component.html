@@ -1,28 +1,3 @@
-<mat-accordion [displayMode]="'flat'" class="navbar-menu__accordion">
-    <mat-expansion-panel class="navbar-menu__expansion-panel container" *ngFor="let navbarItem of navbarItems">
-        <mat-expansion-panel-header (click)="$event.stopPropagation()">
-            <app-header [text]="navbarItem.label" [fontWeight]="fontWeightBold" [isMarginless]="true">
-            </app-header>
-        </mat-expansion-panel-header>
-        <ng-template matExpansionPanelContent>
-            <div class="navbar-menu__section" *ngFor="let section of navbarItem.sections">
-                <div class="navbar-menu__section-item" *ngFor="let sectionItem of section.items">
-                    <div [ngSwitch]="sectionItem.type">
-                        <app-body *ngSwitchCase="heroSectionItemType" [text]="sectionItem.heroText"></app-body>
-                        <div *ngSwitchCase="primaryLinkSectionItemType" class="item">
-                            <a class="link mat-raised-button" [routerLink]="sectionItem.routerLink" mat-menu-item>
-                                {{ sectionItem.label }}
-                            </a>
-                        </div>
-                        <div *ngSwitchCase="secondaryLinkSectionItemType" class="secondary-link__container item" mat-menu-item>
-                            <a class="link" [routerLink]="sectionItem.routerLink">
-                                <app-body [text]="sectionItem.label" [fontWeight]="fontWeightBold"
-                                    [isMarginless]="true"></app-body>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-    </mat-expansion-panel>
+<mat-accordion [displayMode]="'flat'">
+    <app-navbar-menu-item  *ngFor="let id of itemIds$ | async" [id]="id"></app-navbar-menu-item>
 </mat-accordion>
