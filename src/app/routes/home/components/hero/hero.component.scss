@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: calc(100vh - 128px);
+    height: calc(100vh - 130px);
+    flex-basis: 50%;
     @include desktop {
         flex-direction: row;
         padding-block: 16px;
@@ -19,12 +20,8 @@
     height: 50%;
     @include desktop {
         width: 50%;
-        height: 100%;
+        height: none;
     }
-}
-
-.lottie-icons-layer {
-    
 }
 
 .content-container {
