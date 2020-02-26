@@ -8,8 +8,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {PortalModule} from '@angular/cdk/portal';
 import {LayoutModule} from '@angular/cdk/layout';
 
-import { SharedModule } from '../shared/shared.module';
-import { ButtonsModule, TypographyModule } from '../widgets';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ButtonsModule, TypographyModule } from 'src/app/widgets';
 
 import { NavbarComponent } from './containers/navbar/navbar.component';
 import { LogoComponent } from './components/logo/logo.component';

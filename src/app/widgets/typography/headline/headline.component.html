@@ -1,0 +1,9 @@
+<ng-container *ngIf="fontWeight === fontWeightNormal">
+    <span class="mat-display-1" *ngIf="!isMarginless">{{ text }}</span>
+    <span class="mat-display-1" appMarginless *ngIf="isMarginless">{{ text }}</span>
+</ng-container>
+
+<ng-container *ngIf="fontWeight === fontWeightBold">
+    <span class="mat-display-2" *ngIf="!isMarginless">{{ text }}</span>
+    <span class="mat-display-2" appMarginless *ngIf="isMarginless">{{ text }}</span>
+</ng-container>

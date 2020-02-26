@@ -1,0 +1,24 @@
+<div class="hero container">
+    <div class="lottie-container">
+        <div class="lottie-icons-layer"></div>
+        <s1-lottie
+            [options]="lottieParams"
+            [optimize]="false"
+            (animationCreated)=onAnimationCreated($event)>
+        </s1-lottie>
+    </div>
+    <div class="content-container">
+        <app-headline [text]="headline" [fontWeight]="fontWeightBold"></app-headline>
+        <br>
+        <div class="header">
+            <app-header [text]="description"></app-header>
+        </div>
+        <br>
+        <app-contained-button
+            [label]=buttonLabel
+            [routerLink]="buttonRouterLink"
+            [color]="'accent'"
+            (onClick)="onButtonClick()">
+        </app-contained-button>
+    </div>
+</div>

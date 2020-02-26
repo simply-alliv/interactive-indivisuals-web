@@ -4,6 +4,7 @@
   --text-primary-invert-colour: #FFFFFF;
   --grey-colour: #EFEFEF;
   --hover-light-colour: #F6F6F6;
+  --background-colour: #F9F9F9;
   --black-background-colour: #111111;
 }
 
@@ -21,6 +22,8 @@
 // `headlines` and `body-1` levels.
 $custom-typography: mat-typography-config(
   $font-family: 'Nunito',
+  $display-2: mat-typography-level(45px, 48px, 700),
+  $display-1: mat-typography-level(45px, 48px, 400),
   $subheading-2: mat-typography-level(15px, 24px, 700),
   $subheading-1: mat-typography-level(15px, 24px, 400),
   $body-2: mat-typography-level(12px, 20px, 700),

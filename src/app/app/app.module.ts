@@ -7,9 +7,9 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NavbarModule } from '../navbar/navbar.module';
+import { NavbarModule } from './components/navbar/navbar.module';
+import { FooterModule } from './components/footer/footer.module';
 import { CoreModule } from '../core/core.module';
-import { FooterModule } from '../footer/footer.module';
 
 import { AppComponent } from './app.component';
 
@@ -26,7 +26,7 @@ import { environment } from 'src/environments/environment';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAnalyticsModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     NavbarModule,
     FooterModule,
     CoreModule

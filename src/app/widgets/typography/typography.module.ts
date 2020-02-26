@@ -5,12 +5,14 @@ import { BodyComponent } from './body/body.component';
 import { HeaderComponent } from './header/header.component';
 
 import { MarginlessDirective } from './directives/marginless/marginless.directive';
+import { HeadlineComponent } from './headline/headline.component';
 
 @NgModule({
   declarations: [
     BodyComponent,
     HeaderComponent,
-    MarginlessDirective
+    MarginlessDirective,
+    HeadlineComponent
   ],
   imports: [
     SharedModule
@@ -18,6 +20,7 @@ import { MarginlessDirective } from './directives/marginless/marginless.directiv
   exports: [
     BodyComponent,
     HeaderComponent,
+    HeadlineComponent,
     MarginlessDirective
   ]
 })
