@@ -16,6 +16,10 @@ div.mat-menu-item {
 .navbar-menu__expansion-panel {
     border: none;
     box-shadow: none;
+    background: var(--background-colour);
+    & .mat-expansion-panel-header:hover {
+        background: var(--background-colour);
+    }
 }
 
 .secondary-link__container:hover {
