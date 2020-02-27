@@ -5,7 +5,7 @@
 </div>
 
 <app-navbar-container *ngIf="!activeSearch">
-    <app-navbar-item *ngFor="let id of itemIds$ | async" [id]="id"></app-navbar-item>
+    <app-navbar-item *ngFor="let item of items$ | async" [item]="item"></app-navbar-item>
 </app-navbar-container>
 <app-navbar-container *ngIf="activeSearch">
     <app-searchbar [width]="width"></app-searchbar>

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
+import { map, combineLatest } from 'rxjs/operators';
+
 import { BundlesService } from 'src/app/core/services';
-import { map } from 'rxjs/operators';
+import { NavbarItem } from 'src/app/common/models';
+import { BundlesUtils } from '../../utils';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +15,7 @@ import { map } from 'rxjs/operators';
 export class NavbarComponent implements OnInit {
   navbarMobileBreakpoint = '(max-width: 1110px)';
   mobileMatched: boolean;
-  itemIds$: Observable<string[]>;
+  items$: Observable<NavbarItem[]>;
 
   constructor(private breakpointObserver: BreakpointObserver, private bundlesService: BundlesService) {
     this.mobileMatched = this.breakpointObserver.isMatched(this.navbarMobileBreakpoint);
@@ -22,10 +25,22 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.itemIds$ = this.bundlesService.getAllBundlesIds().pipe(
-      map(ids => {
-        ids.push('support');
-        return ids;
+    this.items$ = this.bundlesService.getAllBundles().pipe(
+      combineLatest(this.bundlesService.getAllServices()),
+      map(([bundles, services]) => {
+        const navbarItems: NavbarItem[] = [];
+
+        bundles.forEach(bundle => {
+          if (bundle.id !== 'bundles') {
+            const bundleServices = services.filter(service => service.bundleId === bundle.id);
+            navbarItems.push(BundlesUtils.convertBundleToNavbarItem(bundle, bundleServices));
+          }
+        });
+
+        navbarItems.push(BundlesUtils.supportNavbarItem);
+        console.log(navbarItems);
+
+        return navbarItems;
       })
     );
   }

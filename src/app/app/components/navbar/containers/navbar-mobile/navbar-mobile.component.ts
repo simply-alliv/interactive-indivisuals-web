@@ -1,13 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { NavbarItem } from 'src/app/common/models';
+
 @Component({
   selector: 'app-navbar-mobile',
   templateUrl: './navbar-mobile.component.html',
   styleUrls: ['./navbar-mobile.component.scss']
 })
 export class NavbarMobileComponent {
-  @Input() itemIds$: Observable<string[]>;
+  @Input() items$: Observable<NavbarItem[]>;
   activeSearch: boolean = false;
   menuOpen: boolean = false;
 

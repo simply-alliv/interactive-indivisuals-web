@@ -1,10 +1,10 @@
 <mat-expansion-panel class="navbar-menu__expansion-panel container">
     <mat-expansion-panel-header (click)="$event.stopPropagation()">
-        <app-header [text]="(item$ | async).label" [fontWeight]="fontWeightBold" [isMarginless]="true">
+        <app-header [text]="item.label" [fontWeight]="fontWeightBold" [isMarginless]="true">
         </app-header>
     </mat-expansion-panel-header>
     <ng-template matExpansionPanelContent>
-        <div class="navbar-menu__section" *ngFor="let section of (item$ | async).sections">
+        <div class="navbar-menu__section" *ngFor="let section of item.sections">
             <div class="navbar-menu__section-item" *ngFor="let sectionItem of section.items">
                 <div [ngSwitch]="sectionItem.type">
                     <app-body *ngSwitchCase="heroSectionItemType" [text]="sectionItem.heroText"></app-body>

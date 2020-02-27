@@ -11,6 +11,7 @@ import {
 
 export const convertBundleToNavbarItem = (bundle: Bundle, services: Service[]) => {
     return new NavbarItem(
+        bundle.id,
         bundle.name,
         [
             new NavbarSection([
@@ -33,6 +34,7 @@ export const convertBundleToNavbarItem = (bundle: Bundle, services: Service[]) =
 }
 
 export const supportNavbarItem: NavbarItem = {
+    id: 'support',
     label: 'Support',
     sections: [
         new NavbarSection([
