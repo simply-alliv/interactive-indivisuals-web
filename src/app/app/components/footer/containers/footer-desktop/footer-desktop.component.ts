@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { FooterSection } from 'src/app/common/models';
-import { footerSections } from 'src/app/state/mocks/footer-sections-mock';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-footer-desktop',
@@ -9,5 +9,5 @@ import { footerSections } from 'src/app/state/mocks/footer-sections-mock';
   styleUrls: ['./footer-desktop.component.scss']
 })
 export class FooterDesktopComponent {
-  footerSections: FooterSection[] = footerSections;
+  @Input() footerSections$: Observable<FooterSection[]>;
 }

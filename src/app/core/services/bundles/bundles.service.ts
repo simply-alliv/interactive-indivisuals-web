@@ -51,4 +51,8 @@ export class BundlesService {
   getAllBundleServicesByBundleId(id: string): Observable<Service[]> {
     return this.firestore.collection<Service>(this.servicesCollectionName, ref => ref.where('bundleId', '==', id)).valueChanges({ idField: 'id' })
   }
+
+  getRandomServices(limit: number = 6): Observable<Service[]> {
+    return this.firestore.collection<Service>(this.servicesCollectionName, ref => ref.limit(limit).orderBy('bundleId', 'desc')).valueChanges({ idField: 'id' })
+  }
 }

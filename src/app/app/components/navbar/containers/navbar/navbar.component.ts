@@ -38,7 +38,6 @@ export class NavbarComponent implements OnInit {
         });
 
         navbarItems.push(BundlesUtils.supportNavbarItem);
-        console.log(navbarItems);
 
         return navbarItems;
       })

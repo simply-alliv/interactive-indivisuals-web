@@ -1,15 +1,10 @@
-import { FooterItem, FooterSection } from 'src/app/common/models';
+import { FooterItem, FooterSection, Service } from 'src/app/common/models';
 
-export const footerSections: FooterSection[] = [
+export const addServicesSectionToFooterSections = (services: Service[]) => [
     new FooterSection(
         'Services',
         [
-            new FooterItem('Market Research', '/market-awareness/market-research'),
-            new FooterItem('Market Insight', '/market-awareness/market-insight'),
-            new FooterItem('Brand Design', '/digital-design/brand-design'),
-            new FooterItem('Web Development', '/digital-presence/web-development'),
-            new FooterItem('Custom Email', '/digital-presence/custom-email'),
-            new FooterItem('Reputation Management', '/customer-experience/reputation-management'),
+            ...services.map(service => new FooterItem(service.name, '/' + service.bundleId + '/' + service.id)),
             new FooterItem('View all services', '/services')
         ]
     ),

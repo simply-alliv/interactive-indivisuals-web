@@ -1,2 +1,2 @@
-<app-footer-mobile *ngIf="footerMatched"></app-footer-mobile>
-<app-footer-desktop *ngIf="!footerMatched"></app-footer-desktop>
+<app-footer-mobile *ngIf="footerMatched" [footerSections$]="footerSections$"></app-footer-mobile>
+<app-footer-desktop *ngIf="!footerMatched" [footerSections$]="footerSections$"></app-footer-desktop>

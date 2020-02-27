@@ -1,6 +1,6 @@
 <div class="footer-desktop container">
     <div class="footer-desktop__sections">
-        <app-footer-section *ngFor="let section of footerSections" [section]="section"
+        <app-footer-section *ngFor="let section of footerSections$ | async" [section]="section"
             [isGrid]="section.items.length > 4"></app-footer-section>
     </div>
     <div class="divider"></div>
